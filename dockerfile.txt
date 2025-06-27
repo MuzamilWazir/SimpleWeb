@@ -1,0 +1,14 @@
+# 1. Use NGINX as the base image
+FROM nginx:alpine
+
+# 2. Clear the default web page
+RUN rm -rf /usr/share/nginx/html/*
+
+# 3. Copy your static website files into NGINX
+COPY . /usr/share/nginx/html
+
+# 4. Expose port 80
+EXPOSE 80
+
+# 5. NGINX starts automatically so no CMD needed
+
